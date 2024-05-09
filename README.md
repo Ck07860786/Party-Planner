@@ -1,6 +1,6 @@
 # PartyPlanner
 
-Your ultimate event planning solution! Connect with trusted service providers, make informed decisions with transparent ratings, and streamline booking effortlessly. Revolutionize your event planning experience with EventEase today. 
+Your ultimate event planning solution! Connect with trusted service providers, make informed decisions with transparent ratings, and streamline booking effortlessly. Revolutionize your event planning experience with PartyPlanner today. 
 
 
 ## Main Screen
