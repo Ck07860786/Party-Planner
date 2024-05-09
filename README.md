@@ -9,7 +9,7 @@ Your ultimate event planning solution! Connect with trusted service providers, m
 ## Home page
 ![PP4](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/a9099f8e-2060-448d-beb3-45810e8ff2cb)
 
-# Service Deatil
+## Service Deatil
 ![PP7](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/2766078b-8eb4-4bfe-84e1-b6b7b9ba8877)
 
 ## Signup Page
