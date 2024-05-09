@@ -1,1 +1,11 @@
 
+{
+   "version": 2,
+   "name": "Party-planner",
+   "builds": [
+      { "src": "app.js", "use": "@vercel/node" }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/app.js" }
+   ]
+}
