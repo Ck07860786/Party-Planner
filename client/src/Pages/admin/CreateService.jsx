@@ -78,14 +78,23 @@ function CreateService() {
           <h1 className='text-center items-center text-4xl'>Create Service</h1>
           <div className=' mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8  '>
           <div>
-          <Select className='  columns-md'   placeholder="Select Category" size='large'S showSearch onChange={(value)=>{setCategory(value)}}
-          dropdownClassName="bg-black "
-          >
-          {categories?.map(c=>(
-            <Option  key={c._id} value={c._id}
-           ><p className=' text-white'>{c.name}</p></Option>
-          ))} 
-          </Select>
+          <select
+  className='columns-md w-full h-10 bg-transparent border-[0.1px] border-purple-600 rounded-md text-white outline-none'
+  onChange={(e) => { setCategory(e.target.value) }}
+>
+  <option value="" disabled selected>Select Category</option>
+  {categories?.map(c => (
+    <option
+      key={c._id}
+      value={c._id}
+      className="bg-black font-Lato"
+    >
+      {c.name}
+    </option>
+  ))}
+</select>
+
+
           </div>
           <div className=' flex max-w-md gap-x-4 mb-3 text-black'>
             <label className='focus:outline-none focus:border-purple-600 border border-purple-600 rounded-md  columns-md p-0 '>
@@ -166,7 +175,7 @@ function CreateService() {
                 type="submit"
                 className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
            onClick={handleSubmit}>
-                Create Product
+                Create Service
               </button>
             </div>
 

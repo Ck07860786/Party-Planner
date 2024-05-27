@@ -88,21 +88,20 @@ export const getServiceController = async(req,res)=>{
 
 export const getSingleServiceController = async(req,res)=>{
     try {
-        const  service = await serviceModel.findOne({slug: req.params.slug})
+        const service = await serviceModel.findOne({ slug: req.params.slug }).populate('reviews');
         res.status(200).send({
-            success:true,
-            message:'service accessed successfully',
+            success: true,
+            message: 'Service accessed successfully',
             service,
-        })
+        });
     } catch (error) {
-        console.log(error)
+        console.log(error);
         res.status(500).send({
-            success:false,
-            message:'error in getting the single service',
+            success: false,
+            message: 'Error in getting the single service',
             error
-        })
+        });
     }
-
 }
 
 //delete service 
@@ -206,6 +205,10 @@ export const filterServicesController = async(req,res)=>{
         })
     }
 }
+
+
+
+
 
 
 

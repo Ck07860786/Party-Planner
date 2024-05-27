@@ -7,10 +7,12 @@ function Hero() {
     <>
          <div className="relative w-full h-screen">
       <img src={Heroimage} alt='heroimage' className="absolute inset-0 w-full h-full object-cover" />
+      
       <div className="absolute inset-0 flex  mt-[250px] justify-center">
-     
+
       <div>
       <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+      
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-purple-300 ring-1 ring-blue-500 hover:ring-purple-600">
               More services comming soon.{' '}
               

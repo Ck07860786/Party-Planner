@@ -1,3 +1,4 @@
+// serviceModel.js
 import mongoose from "mongoose";
 
 const serviceSchema = new mongoose.Schema({
@@ -5,11 +6,11 @@ const serviceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    slug:{
-      type:String,
-      required:true,
-      lowercase:true,
-  },
+    slug: {
+        type: String,
+        required: true,
+        lowercase: true
+    },
     description: {
         type: String,
         required: true
@@ -20,7 +21,7 @@ const serviceSchema = new mongoose.Schema({
     },
     category: {
         type: mongoose.ObjectId,
-        ref: 'categori', 
+        ref: 'categori',
         required: true
     },
     image: {
@@ -32,7 +33,11 @@ const serviceSchema = new mongoose.Schema({
             type: String,
             required: true
         }
-    }
+    },
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }]
 });
 
 export default mongoose.model("Service", serviceSchema);
