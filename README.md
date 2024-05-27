@@ -17,7 +17,7 @@ Your ultimate event planning solution! Connect with trusted service providers, m
 
 
 ## Admin pannel
-![PP8](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/9c21a3de-a15a-4cec-88d0-02b1e48d6133)
+![Screenshot 2024-05-27 180221](https://github.com/Ck07860786/Party-Planner/assets/115991360/18b67a44-fe0e-4bda-8b69-fc299cdac901)
 
 
 
