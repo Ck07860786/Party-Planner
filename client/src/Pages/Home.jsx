@@ -4,6 +4,7 @@ import { Button, Checkbox, Radio } from "antd";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Prices } from "./Prices";
+import Contribution from "./Contribution";
 
 function Home() {
   const [services, setServices] = useState([]);
@@ -132,11 +133,15 @@ function Home() {
                             className="object-cover object-center w-full"
                           />
                         </div>
+                        <div className=" flex items-center">
+                        <h1 className=" text-yellow-300">User Reviews</h1>
+                         <Contribution/>
+                        </div>
+                        
                         <div className="mt-4 flex justify-between">
+                       
                           <div>
-                            <h1 className="text-gray-600 text-sm font-Lato p-1 rounded-lg">
-                              Provider: {s._id}
-                            </h1>
+                            
                             <h3 className="font-Lato text-purple-400 font-bold text-xl">
                               {s.name}
                             </h3>
@@ -144,7 +149,7 @@ function Home() {
                         </div>
                         <div>
                           <p className="text-sm text-white">
-                            {s.description.substring(0, 120)}...
+                            {s.description.substring(0, 50)}...
                           </p>
                         </div>
                       </div>
@@ -180,3 +185,8 @@ function Home() {
 }
 
 export default Home;
+
+
+
+
+
