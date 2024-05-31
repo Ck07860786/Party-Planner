@@ -7,7 +7,7 @@ Your ultimate event planning solution! Connect with trusted service providers, m
 ![PP1](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/525feedd-f045-433d-b295-6de788871237)
 
 ## Home page
-![PP4](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/a9099f8e-2060-448d-beb3-45810e8ff2cb)
+![si](https://github.com/Ck07860786/Party-Planner/assets/115991360/91d9da8b-7776-4905-8537-db026417af22)
 
 ## Service Deatil
 ![PP7](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/2766078b-8eb4-4bfe-84e1-b6b7b9ba8877)
