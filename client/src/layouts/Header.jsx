@@ -1,10 +1,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../context/auth";
-import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
-import { Badge, Button } from 'antd'
+import { Menu, Transition } from '@headlessui/react'
+import useCategory from "../hooks/useCategory";
+
 
 
 function classNames(...classes) {
@@ -14,6 +15,7 @@ function classNames(...classes) {
 
 function Header() {
   const [auth, setAuth] = useAuth();
+  const categories =useCategory ()
 
   const handleLogout =()=>{
     
@@ -52,6 +54,66 @@ function Header() {
               <Link to="#">Services</Link>
             </p>
           </div>
+
+          <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white border border-purple-600 shadow-sm  outline-none">
+          Categories
+          <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </Menu.Button>
+      </div>
+      
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+          <Menu.Item >
+            
+            {({ active }) => (
+              
+                <NavLink to={`/categories`}
+                 
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  All Categories
+                </NavLink>
+              )}
+            </Menu.Item>
+          {categories?.map((c)=>(
+            <Menu.Item key={c._id}>
+            
+            {({ active }) => (
+              
+                <NavLink to={`/category/${c.slug}`}
+                 
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  {c.name}
+                </NavLink>
+              )}
+            </Menu.Item>
+
+          ))}
+            
+          
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
 
           <div className=" flex gap-4 font-Lato">
           {

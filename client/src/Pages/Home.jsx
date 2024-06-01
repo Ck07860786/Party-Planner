@@ -133,6 +133,7 @@ function Home() {
                             className="object-cover object-center w-full"
                           />
                         </div>
+                        <h1 className=" text-gray-500 font-Lato text-[15px] py-2">Provider : {s.category}</h1>
                         <div className=" flex items-center">
                         <h1 className=" text-yellow-300">User Reviews</h1>
                          <Contribution/>

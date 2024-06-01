@@ -52,7 +52,7 @@ function Login() {
             <div className='w-1/2 h-svh relative'>
                 <img src={PPlogo} alt="login bg" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
-                    <h1 className='text-[98px] font-Lato font-semibold text-white'>Party <span className='text-purple-600 text-[98px] font-Lato font-semibold'>Planner</span></h1>
+                    <h1 className='text-[98px] font-Lato font-semibold text-white'>Party<span className='text-purple-600 text-[98px] font-Lato font-semibold'>Planner</span></h1>
                     <p className=' text-white font-Lato text-xl'>Your Dreams, Our Expertise - Let's Party 🎉</p>
                  
                 </div>
