@@ -2,6 +2,7 @@
 import cloudinary from "../utils/cloudinary.js";
 import serviceModel from "../Models/serviceModel.js";
 import slugify from "slugify";
+import categoryModel from "../Models/categoryModel.js";
 
 export const createServiceController = async(req,res)=>{
     
@@ -17,7 +18,6 @@ export const createServiceController = async(req,res)=>{
               return res.status(500).send({ error: "Price is required" });
             case !description:
               return res.status(500).send({ error: "Description is required" });
-            
             case !category:
               return res.status(500).send({ error: "Category is required" });
             case !image:
@@ -205,6 +205,30 @@ export const filterServicesController = async(req,res)=>{
         })
     }
 }
+
+// get ctaegory-product
+
+export const categoryServiceController = async(req,res)=>{
+    try {
+      const category = await categoryModel.findOne({slug:req.params.slug})
+      const service = await serviceModel.find({category}).populate('category')
+      res.status(200).send({
+        success:true,
+        category,
+        service,
+      })
+      
+    } catch (error) {
+      console.log(error)
+      res.status(500).send({
+        success:false,
+        message:'error in getting service',
+        error
+      })
+    }
+  
+  }
+  
 
 
 

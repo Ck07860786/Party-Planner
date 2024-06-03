@@ -1,6 +1,8 @@
 import express from "express";
 import { isAdmin, requireSignIn } from "../Middlewares/authMiddleware.js";
 import {
+
+  categoryServiceController,
   createServiceController,
   deleteServiceController,
   filterServicesController,
@@ -40,5 +42,11 @@ updateServiceController
 //filter services
 
 router.post('/filter-services', filterServicesController)
+
+
+
+//product- Category 
+
+router.get('/category-service/:slug',categoryServiceController)
 
 export default router;

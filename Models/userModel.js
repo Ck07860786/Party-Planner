@@ -32,3 +32,6 @@ const useModel = new mongoose.Schema({
 )
 
 export default mongoose.model('user',useModel)
+
+
+

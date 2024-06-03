@@ -16,3 +16,5 @@ const categorySchema = new mongoose.Schema({
 
 export default mongoose.model("categori" , categorySchema)
 
+
+

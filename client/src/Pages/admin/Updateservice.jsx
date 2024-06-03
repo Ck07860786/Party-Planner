@@ -114,18 +114,23 @@ function Updateservice() {
           <div className=' mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8  '>
           <div>
           {categories.length > 0 && (
-  <Select
-    className='columns-md'
-    placeholder="Select Category"
+            <select
+  className='columns-md w-full h-10 bg-transparent border-[0.1px] border-purple-600 rounded-md text-white outline-none'
+  placeholder="Select Category"
     size='large'
     showSearch
     onChange={(value)=>{setCategory(value)}}
     value={category}
-  >
-    {categories.map(c=>(
-      <Option key={c._id} value={c._id}>{c.name}</Option>
-    ))} 
-  </Select>
+
+>
+ 
+  {categories.map(c=>(
+      <option value="" key={c._id} >{c.name}</option>
+    ))} 
+
+
+
+</select>
 )}
           </div>
           <div className=' flex max-w-md gap-x-4 mb-3 text-black'>

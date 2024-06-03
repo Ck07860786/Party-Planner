@@ -20,12 +20,14 @@ import Services from './Pages/admin/Services'
 import Updateservice from './Pages/admin/Updateservice'
 import ServiceDetail from './Pages/ServiceDetail'
 import About from './Pages/About'
+import ProductCategory from './Pages/ProductCategory'
 function App() {
   return (
     <>
     <Routes>
       <Route path='/' element={<Hero/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/category/:slug' element={<ProductCategory/>}/>
 
       <Route path='/service/:slug' element={<ServiceDetail/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>} >
