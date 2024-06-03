@@ -21,6 +21,7 @@ import Updateservice from './Pages/admin/Updateservice'
 import ServiceDetail from './Pages/ServiceDetail'
 import About from './Pages/About'
 import ProductCategory from './Pages/ProductCategory'
+import Categories from './Pages/Categories'
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
       <Route path='/' element={<Hero/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/category/:slug' element={<ProductCategory/>}/>
+      <Route path='/categories' element={<Categories/>}/>
 
       <Route path='/service/:slug' element={<ServiceDetail/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>} >
