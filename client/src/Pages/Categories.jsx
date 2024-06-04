@@ -20,7 +20,7 @@ function Categories() {
 
             <div
               type="submit"
-              className="rounded-md w-[400px] h-[100px] text-center flex items-center   bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black hover:border-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              className="rounded-md w-[400px] h-[100px] text-center flex items-center   bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-600 hover:text-black  outline-none"
             >
                 
 

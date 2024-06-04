@@ -5,12 +5,14 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Prices } from "./Prices";
 import Contribution from "./Contribution";
+import useCategory from "../hooks/useCategory";
 
 function Home() {
   const [services, setServices] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
+  const [category] = useCategory()
 
   const handleFilter = (value, id) => {
     let all = [...checked];
