@@ -22,12 +22,14 @@ import ServiceDetail from './Pages/ServiceDetail'
 import About from './Pages/About'
 import ProductCategory from './Pages/ProductCategory'
 import Categories from './Pages/Categories'
+import ContactUs from './Pages/ContactUs'
 function App() {
   return (
     <>
     <Routes>
       <Route path='/' element={<Hero/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/contact' element={<ContactUs/>}/>
       <Route path='/category/:slug' element={<ProductCategory/>}/>
       <Route path='/categories' element={<Categories/>}/>
 

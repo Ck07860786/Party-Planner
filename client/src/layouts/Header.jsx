@@ -48,7 +48,7 @@ function Header() {
               <Link to="/about">About</Link>
             </p>
             <p>
-              <Link to="#">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </p>
             <p>
               <Link to="#">Services</Link>
