@@ -77,12 +77,12 @@ function Home() {
       <Header />
       <div className="flex w-full h-full">
         <div className="w-1/4 bg-black mt-20">
-          <h1 className="text-center font-Lato text-blue-600 text-xl mt-5">
+          <h1 className=" ml-10 px-5 font-Lato text-blue-600 text-xl mt-5">
             Filter by category
           </h1>
           <div className="mt-5">
             {categories?.map((c) => (
-              <div className="text-white ml-10 px-24" key={c._id}>
+              <div className="text-white ml-10 px-5" key={c._id}>
                 <Checkbox
                   className="text-white"
                   onChange={(e) => handleFilter(e.target.checked, c._id)}
@@ -92,20 +92,20 @@ function Home() {
               </div>
             ))}
           </div>
-          <h1 className="text-center font-Lato text-xl text-blue-600 mt-8 mr-4">
+          <h1 className=" font-Lato text-xl px-5 ml-10 text-blue-600 mt-8 mr-4">
             Filter by prices
           </h1>
           <div className="mt-3">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices.map((p) => (
-                <div key={p._id} className="text-white ml-10 px-24">
+                <div key={p._id} className="text-white ml-10 px-5">
                   <Radio className="text-white" value={p.array}>
                     {p.name}
                   </Radio>
                 </div>
               ))}
             </Radio.Group>
-             <div className="text-white ml-10 px-24  mt-8 ">
+             <div className="text-white ml-10 px-5  mt-8 ">
 
 
             <Button className=" bg-blue-500  border-blue-700 shadow-md shadow-blue-600 " onClick={()=>window.location.reload()}>Reset Filter </Button>
@@ -114,8 +114,8 @@ function Home() {
           
         </div>
         
-        <div className="w-3/4">
-          <h1 className="text-center font-Lato text-2xl shadow-sm  mt-5">
+        <div className="w-full">
+          <h1 className="text-center font-Lato text-2xl shadow-sm  mt-2">
             All Services
           </h1>
           <div className="bg-black">
