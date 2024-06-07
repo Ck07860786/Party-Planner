@@ -5,6 +5,7 @@ import toast from 'react-hot-toast'
 import axios from 'axios'
 import {Select} from 'antd'
 import { useNavigate } from 'react-router'
+import { BASE_URL } from '../../Helper/PortUrl'
 
 const {Option} = Select
 
@@ -23,7 +24,7 @@ function CreateService() {
         try {
           
           
-          const {data} = await axios.get('http://localhost:8080/api/v1/category/get-category',)
+          const {data} = await axios.get(`${BASE_URL}/api/v1/category/get-category`,)
           if(data?.success){
             setCategories(data?.category)
             console.log(data?.category)
@@ -51,7 +52,7 @@ function CreateService() {
         serviceData.append("image", image)
         serviceData.append("category", category)
   
-        const {data} = await axios.post('http://localhost:8080/api/v1/service/create-service',serviceData)
+        const {data} = await axios.post(`${BASE_URL}/api/v1/service/create-service`,serviceData)
         if(data.success){
           toast.success(data.message)
        

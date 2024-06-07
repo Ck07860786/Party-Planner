@@ -8,6 +8,7 @@ import { FaRegUser, FaRegCircleQuestion } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
+import { BASE_URL } from '../Helper/PortUrl';
 
 function Signup() {
   const [name, setName] = useState("");
@@ -21,7 +22,7 @@ function Signup() {
     e.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:8080/api/v1/auth/register", {
+        .post(`${BASE_URL}/api/v1/auth/register`, {
           name,
           email,
           phone,

@@ -3,13 +3,14 @@ import Header from '../../layouts/Header';
 import AdminMenu from './AdminMenu';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../Helper/PortUrl';
 
 function Services() {
   const [services, setServices] = useState([]);
 
   const getAllServices = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8080/api/v1/service/get-service');
+      const { data } = await axios.get(`${BASE_URL}/api/v1/service/get-service`);
       setServices(data.service);
       console.log(data.service);
       console.log(data.category);

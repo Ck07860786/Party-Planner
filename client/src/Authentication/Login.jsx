@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { MdOutlineEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
+import { BASE_URL } from '../Helper/PortUrl';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/login', { email, password }).then(response => {
+      const response = await axios.post(`${BASE_URL}/api/v1/auth/login`, { email, password }).then(response => {
         if (response.data.success) {
           toast.success(response.data.message);
           setAuth({

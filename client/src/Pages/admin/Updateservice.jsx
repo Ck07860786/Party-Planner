@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router';
 import Header from '../../layouts/Header';
 import AdminMenu from './AdminMenu';
 import { Select } from 'antd';
+import { BASE_URL } from '../../Helper/PortUrl';
 const {Option} = Select
 
 
@@ -65,7 +66,7 @@ function Updateservice() {
   const handleDelete = async () => {
     try {
        
-      const {data} = await axios.delete(`http://localhost:8080/api/v1/service/delete-service/${id}`)
+      const {data} = await axios.delete(`${BASE_URL}/api/v1/service/delete-service/${id}`)
       toast.success(data.message)
       navigate('/dashboard/admin/services')
 
@@ -89,7 +90,7 @@ function Updateservice() {
         console.log("Service Data:", Object.fromEntries(serviceData)); // Log service data for debugging
     
         const { data } = await axios.put(
-          `http://localhost:8080/api/v1/service/update-service/${id}`,
+          `${BASE_URL}/api/v1/service/update-service/${id}`,
           serviceData
         );
         if (data.success) {

@@ -7,6 +7,7 @@ import { MdMailOutline } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
 import { LuUserCircle } from "react-icons/lu";
 import { FaStar } from "react-icons/fa6";
+import { BASE_URL } from '../Helper/PortUrl';
 
 function ServiceDetail() {
   const [service, setService] = useState({});
@@ -17,12 +18,12 @@ function ServiceDetail() {
   const [comment, setComment] = useState('');
 
   const getService = async () => {
-    const { data } = await axios.get(`http://localhost:8080/api/v1/service/get-service/${params.slug}`);
+    const { data } = await axios.get(`${BASE_URL}/api/v1/service/get-service/${params.slug}`);
     setService(data?.service);
   };
 
   const getReviews = async () => {
-    const { data } = await axios.get(`http://localhost:8080/api/v1/review/get-reviews/${service._id}`);
+    const { data } = await axios.get(`${BASE_URL}/api/v1/review/get-reviews/${service._id}`);
     setReviews(data?.reviews);
   };
 
@@ -30,7 +31,7 @@ function ServiceDetail() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `http://localhost:8080/api/v1/review/create-review`,
+        `${BASE_URL}/api/v1/review/create-review`,
         { serviceId: service._id, rating, comment },
         {
           headers: {

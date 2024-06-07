@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Prices } from "./Prices";
 import Contribution from "./Contribution";
 import useCategory from "../hooks/useCategory";
+import { BASE_URL } from "../Helper/PortUrl";
 
 function Home() {
   const [services, setServices] = useState([]);
@@ -27,7 +28,7 @@ function Home() {
   const getAllServices = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/service/get-service"
+        `${BASE_URL}/api/v1/service/get-service`
       );
       setServices(data.service);
     } catch (error) {
@@ -46,7 +47,7 @@ function Home() {
   const filterService = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/service/filter-services",
+        `${BASE_URL}/api/v1/service/filter-services`,
         { checked, radio }
       );
       setServices(data.services); // Ensure you're updating services correctly
@@ -58,7 +59,7 @@ function Home() {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        `${BASE_URL}/api/v1/category/get-category`
       );
       if (data.success) {
         setCategories(data.category);

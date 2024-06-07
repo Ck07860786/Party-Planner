@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 import { Link,useNavigate } from 'react-router-dom';
 import Contribution from './Contribution';
+import { BASE_URL } from '../Helper/PortUrl';
 
 
 function ProductCategory() {
@@ -14,7 +15,7 @@ function ProductCategory() {
 
     const getCategoryService =async()=>{
         try {
-           const {data} = await axios.get(`http://localhost:8080/api/v1/service/category-service/${params.slug}`)
+           const {data} = await axios.get(`${BASE_URL}/api/v1/service/category-service/${params.slug}`)
            setcategory(data?.category)
            setServices(data?.service)
            console.log(data?.services)
