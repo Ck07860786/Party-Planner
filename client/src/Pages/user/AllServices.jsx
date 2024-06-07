@@ -46,7 +46,7 @@ function Products() {
          <Header/>
       <div className='flex bg-black text-white font-Lato'>
         <UserMenu/>
-        <div className="w-3/4">
+        <div className=" w-full">
           <h1 className="text-center font-Lato text-2xl shadow-sm  mt-5">
             All Services
           </h1>
