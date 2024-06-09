@@ -75,8 +75,8 @@ function CreateService() {
         <Header/>
       <div className='flex bg-black text-white font-Lato'>
         <AdminMenu/>
-        <div className=' ml-80 mt-10'>
-          <h1 className='text-center items-center text-4xl'>Create Service</h1>
+        <div className='  px-10 mt-5'>
+          <h1 className='text-center items-center text-2xl'>Create Service</h1>
           <div className=' mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8  '>
           <div>
           <select

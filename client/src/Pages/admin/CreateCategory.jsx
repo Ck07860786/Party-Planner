@@ -94,9 +94,9 @@ function CreateCategory() {
   return (
     <>
         <Header />
-      <div className='flex bg-black text-white font-Lato'>
+      <div className='flex bg-black text-white items-center font-Lato'>
         <AdminMenu />
-        <div className=' px-32 mt-10'>
+        <div className=' px-32 mt-10 '>
           <h1 className='text-center items-center text-4xl'>Manage category</h1>
           <div>
           <AddCategoryform handleSubmit={handleSubmit} value={name} setValue={setName}/>

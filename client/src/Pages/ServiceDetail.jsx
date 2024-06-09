@@ -128,7 +128,7 @@ function ServiceDetail() {
                 </h3>
                 <p className="text-yellow-300 mt-2">Rating: {review.rating}/5</p>
                 <p>{review.comment}</p>
-                <hr className="mt-5 border-t-2 h-0.5 border-blue-600 shadow-lg" />
+              
               </div>
             ))}
           </div>
