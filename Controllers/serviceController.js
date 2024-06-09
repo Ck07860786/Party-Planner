@@ -1,5 +1,5 @@
 
-import cloudinary from "../utils/cloudinary.js";
+import cloudinary from '../utils/cloudinary.js'
 import serviceModel from "../Models/serviceModel.js";
 import slugify from "slugify";
 import categoryModel from "../Models/categoryModel.js";
