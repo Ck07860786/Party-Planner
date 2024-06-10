@@ -8,7 +8,7 @@ function Categories() {
   const categories = useCategory();
   return (
     <>
-    <div className=" bg-black w-full h-svh">
+    <div className=" bg-black w-full h-full">
       <Header />
       <div className=" text-center mt-5">
         <h1 className=" text-3xl">All Categories</h1>
