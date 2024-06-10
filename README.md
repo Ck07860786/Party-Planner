@@ -2,6 +2,8 @@
 
 Your ultimate event planning solution! Connect with trusted service providers, make informed decisions with transparent ratings, and streamline booking effortlessly. Revolutionize your event planning experience with PartyPlanner today. 
 
+## Live: https://party-planner-pp.vercel.app/
+
 
 ## Main Screen
 ![PP1](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/525feedd-f045-433d-b295-6de788871237)
