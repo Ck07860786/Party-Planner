@@ -45,7 +45,7 @@ function Signup() {
 
   return (
     <div className="flex bg-black flex-col md:flex-row min-h-screen">
-      <div className="relative w-full md:w-1/2 h-64 md:h-auto">
+      <div className="relative w-full md:w-1/2 h-64 md:h-auto hidden md:block">
         <img src={PPlogo} alt="login bg" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-60">
           <h1 className="text-4xl md:text-6xl font-Lato font-semibold text-white">Party<span className="text-purple-600">Planner</span></h1>
