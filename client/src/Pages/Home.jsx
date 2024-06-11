@@ -7,6 +7,7 @@ import { Prices } from "./Prices";
 import Contribution from "./Contribution";
 import useCategory from "../hooks/useCategory";
 import { BASE_URL } from "../Helper/PortUrl";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 function Home() {
   const [services, setServices] = useState([]);
@@ -14,6 +15,7 @@ function Home() {
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
   const [category] = useCategory();
+  const [isFilterVisible, setIsFilterVisible] = useState(false); // state to handle filter visibility
 
   const handleFilter = (value, id) => {
     let all = [...checked];
@@ -77,11 +79,59 @@ function Home() {
     <div className="bg-black text-white min-h-screen">
       <Header />
       <div className="flex flex-col md:flex-row w-full">
-        <div className="w-full md:w-1/4 bg-black mt-10 p-4 md:p-8">
+        {/* Dropdown for filters in mobile view */}
+        <div className="w-full md:hidden p-4">
+          <button
+            onClick={() => setIsFilterVisible(!isFilterVisible)}
+            className="w-full flex items-center justify-between bg-black border border-purple-600 px-4 py-2 text-white font-semibold rounded-md"
+          >
+            Filters {isFilterVisible ? <AiOutlineUp /> : <AiOutlineDown />}
+          </button>
+          {isFilterVisible && (
+            <div className="bg-black mt-4 p-4 rounded-md border border-gray-700">
+              <h1 className="text-blue-600 text-xl mt-5 font-Lato">Filter by category</h1>
+              <div className="mt-5">
+                {categories?.map((c) => (
+                  <div className="text-white" key={c._id}>
+                    <Checkbox
+                      className="text-white"
+                      onChange={(e) => handleFilter(e.target.checked, c._id)}
+                    >
+                      {c.name}
+                    </Checkbox>
+                  </div>
+                ))}
+              </div>
+              <h1 className="text-blue-600 text-xl mt-5 font-Lato">Filter by prices</h1>
+              <div className="mt-3">
+                <Radio.Group onChange={(e) => setRadio(e.target.value)}>
+                  {Prices.map((p) => (
+                    <div key={p._id} className="text-white">
+                      <Radio className="text-white" value={p.array}>
+                        {p.name}
+                      </Radio>
+                    </div>
+                  ))}
+                </Radio.Group>
+                <div className="mt-8">
+                  <Button
+                    className="bg-blue-500 border-blue-700 shadow-md shadow-blue-600"
+                    onClick={() => window.location.reload()}
+                  >
+                    Reset Filter
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Sidebar for filters in larger screens */}
+        <div className="hidden md:block w-full md:w-1/4 bg-black mt-10 p-4 md:p-8">
           <h1 className="text-blue-600 text-xl mt-5 font-Lato">Filter by category</h1>
           <div className="mt-5">
             {categories?.map((c) => (
-              <div className="text-white " key={c._id}>
+              <div className="text-white" key={c._id}>
                 <Checkbox
                   className="text-white"
                   onChange={(e) => handleFilter(e.target.checked, c._id)}
@@ -103,7 +153,10 @@ function Home() {
               ))}
             </Radio.Group>
             <div className="mt-8">
-              <Button className="bg-blue-500 border-blue-700 shadow-md shadow-blue-600" onClick={() => window.location.reload()}>
+              <Button
+                className="bg-blue-500 border-blue-700 shadow-md shadow-blue-600"
+                onClick={() => window.location.reload()}
+              >
                 Reset Filter
               </Button>
             </div>
@@ -131,7 +184,9 @@ function Home() {
                             className="object-cover object-center w-full"
                           />
                         </div>
-                        <h1 className="text-gray-500 font-Lato text-[15px] py-2">Provider : {s.category}</h1>
+                        <h1 className="text-gray-500 font-Lato text-[15px] py-2">
+                          Provider : {s.category}
+                        </h1>
                         <div className="flex items-center">
                           <h1 className="text-yellow-300">User Reviews</h1>
                           <Contribution />
