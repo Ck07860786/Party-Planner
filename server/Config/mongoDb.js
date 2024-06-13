@@ -7,7 +7,7 @@ const mongoConnect = async()=>{
         
     } catch (error) {
         console.log(error)
-        resizeBy.status(500).send({
+        res.status(500).send({
             success:true,
             message:'error in Database connectivity',
             error
