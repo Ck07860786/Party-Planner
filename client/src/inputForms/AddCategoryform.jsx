@@ -5,7 +5,7 @@ function AddCategoryform({handleSubmit,value,setValue}) {
     <> 
     <form onSubmit={handleSubmit}>
         <div className="mt-6 flex w-full gap-x-4 py-4">
-              <label htmlFor="email-address" className="sr-only">
+              <label htmlFor="category" className="sr-only">
                 Categoty
               </label>
               <input

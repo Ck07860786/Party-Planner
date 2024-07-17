@@ -57,7 +57,7 @@ function CreateService() {
           toast.success(data.message)
        
           navigate('/dashboard/admin/services')
-          Text
+          
         }
         else{
           toast.error(data.message)
