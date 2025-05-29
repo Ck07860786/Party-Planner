@@ -35,5 +35,4 @@ function AdminMenu() {
     </div>
   )
 }
-
 export default AdminMenu
